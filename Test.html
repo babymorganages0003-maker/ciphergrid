@@ -1,0 +1,81 @@
+﻿```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hello World - Test Page</title>
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased min-h-screen flex items-center justify-center p-6 selection:bg-indigo-500 selection:text-white">
+
+
+  <!-- Main Card Container -->
+  <main class="w-full max-w-md bg-white border border-slate-200/80 rounded-2xl shadow-xl shadow-slate-200/50 p-8 sm:p-10 text-center transition-all duration-300 hover:shadow-2xl hover:shadow-slate-200">
+    
+    <!-- Decorative Icon / Badge -->
+    <div class="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-indigo-50 text-indigo-600 mb-6 border border-indigo-100 shadow-sm">
+      <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+      </svg>
+    </div>
+
+
+    <!-- Main Heading -->
+    <h1 class="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900 mb-3">
+      Hello, World!
+    </h1>
+
+
+    <!-- Subtitle / Status Text -->
+    <p class="text-slate-500 text-sm sm:text-base leading-relaxed mb-8">
+      Your environment is configured and ready. This basic test page confirms that HTML rendering and styling are working properly.
+    </p>
+
+
+    <!-- Interactive Counter Test Section -->
+    <div class="pt-6 border-t border-slate-100 flex flex-col items-center gap-3">
+      <button 
+        id="pingBtn" 
+        class="w-full sm:w-auto px-5 py-2.5 bg-indigo-600 hover:bg-indigo-700 active:bg-indigo-800 text-white font-medium text-sm rounded-xl transition duration-150 shadow-sm shadow-indigo-200 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+        Test Interaction
+      </button>
+      <span id="feedbackText" class="text-xs text-slate-400 h-4 transition-opacity">
+        Ready for input
+      </span>
+    </div>
+
+
+  </main>
+
+
+  <!-- Interactive JavaScript logic -->
+  <script>
+    const btn = document.getElementById('pingBtn');
+    const feedback = document.getElementById('feedbackText');
+    let clickCount = 0;
+
+
+    btn.addEventListener('click', () => {
+      clickCount++;
+      const time = new Date().toLocaleTimeString();
+      feedback.textContent = `Active: Clicked ${clickCount} time${clickCount === 1 ? '' : 's'} (Last: ${time})`;
+      feedback.classList.remove('text-slate-400');
+      feedback.classList.add('text-indigo-600', 'font-medium');
+    });
+  </script>
+
+
+</body>
+</html>
+```
